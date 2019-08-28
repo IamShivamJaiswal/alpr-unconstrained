@@ -114,9 +114,9 @@ class Shape():
 
 	def read(self,line):
 		data 		= line.strip().split(',')
-		ss 			= int(data[0])
-		values 		= data[1:(ss*2 + 1)]
-		text 		= data[(ss*2 + 1)] if len(data) >= (ss*2 + 2) else ''
+		ss 			= 4
+		values 		= data[:ss*2]
+		text 		= data[-1].split("::")[-1]
 		self.pts 	= np.array([float(value) for value in values]).reshape((2,ss))
 		self.text   = text
 
